@@ -1,0 +1,34 @@
+<h1>Carrito de Compras</h1>
+<hr>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      
+      <table class="table table-bordered">
+        <thead class="thead-inverse text-center">
+        <tr>
+          <th>#</th>
+          <th>Eliminar</th>
+          <th>Libros</th>
+          <th>Cantidad</th>
+          <th>Valor Unitario</th>
+          <th>Valor Total</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <!--<tr *ngFor="let k of heroes| keys; let i = index">-->
+        <tr>
+          <td>1</td>
+          <td><a (click)="2" class="puntero alert-link">Eliminar</a>
+          </td>
+          <td>La Piedra Filosofal</td>
+          <td>{{2}}</td>
+          <td>{{50 | currency}}</td>
+          <td>{{2*50 | currency}}</td>
+        </tr>
+        </tbody>
+      </table>
+    
+    </div>
+  </div>
+</div>

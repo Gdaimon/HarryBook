@@ -1,0 +1,42 @@
+<h1>Harry Books - Tienda Online</h1>
+<hr>
+<div class="d-flex animated fadeIn fast">
+  <h3 class="mr-auto p-2">Libros Disponibles</h3>
+  <button
+    class="p-2 btn btn-outline-primary puntero"
+    [routerLink]="['/shop']"
+  >Ir al Carrito de compras
+  </button>
+</div>
+<br />
+<div
+  class="d-flex animated fadeIn fast"
+  style="margin-bottom: 30px;"
+  *ngFor="let libro of listaLibros"
+>
+  <div class="card" style="width: 20rem;">
+    <img
+      class="card-img-top" src="{{libro.img}}"
+      style="max-width: 318px"
+      alt="Card image cap"
+    >
+  </div>
+  <div style="margin-left: 15px">
+    <h3 style="padding-top: 20px">{{libro.nombre}}</h3>
+    <p class="text-muted">Cantidad disponible: <span>{{libro.cantidad }}</span></p>
+    <p class="text-muted">Precio: <span>{{libro.precio | currency}}</span></p>
+    <p class="text-muted">Agregar al carrito:
+      <input
+        type="number" style="width: 45px"
+        (click)="adicionarLibro($event.target.value, libro)"
+        [(value)]="libro.pedido"
+      ></p>
+    <button
+      (click)="agregarCarrito(libro)"
+      class="p-2 btn btn-outline-primary puntero"
+    >Agregar
+    </button>
+  </div>
+
+</div>
+
